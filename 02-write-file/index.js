@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { stdin, stdout, exit } = require('process');
 
-const file = path.resolve(__dirname, 'written.txt');
+const file = path.join(__dirname, 'written.txt');
 const outStream = fs.createWriteStream(file);
 
-stdout.write('Type your text\n');
+stdout.write('Type your text:\n');
 stdin.on('data', (data) => {
   let input = data.toString();
   if (input.trim() === 'exit') {
@@ -14,4 +14,4 @@ stdin.on('data', (data) => {
   outStream.write(input);
 });
 process.on('SIGINT', exit);
-process.on('exit', () => stdout.write('Succesfully written'));
+process.on('exit', () => stdout.write('Your input is written!'));
