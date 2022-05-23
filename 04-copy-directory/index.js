@@ -17,6 +17,7 @@ fs.readdir(dest, (err, file) => {
   }
 });
 
+
 fs.readdir(dir, function(err, files) {
   if (err) throw err;
 
