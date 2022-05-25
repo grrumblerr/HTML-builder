@@ -18,7 +18,7 @@ function readFiles(dir) {
         if (err) throw err;
         if (stats.isDirectory()) return;
         if (stats.isFile()) {
-          console.log(file, (stats.size / 1024) + ' kB');
+          console.log(file, stats.size + ' Bytes');
         }
       });
     });
