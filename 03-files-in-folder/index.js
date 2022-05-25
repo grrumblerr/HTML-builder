@@ -18,7 +18,11 @@ function readFiles(dir) {
         if (err) throw err;
         if (stats.isDirectory()) return;
         if (stats.isFile()) {
-          console.log(file, stats.size + ' Bytes');
+          let fileName = file.split('.');
+          // console.log(fileName);
+          let name = fileName[0];
+          let ext = fileName[1];
+          console.log(`${name} - ${ext} - ${stats.size}` + ' Bytes');
         }
       });
     });
